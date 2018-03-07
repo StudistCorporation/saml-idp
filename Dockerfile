@@ -1,7 +1,8 @@
 FROM node:latest
 
 WORKDIR saml-idp
-RUN git clone https://github.com/StudistCorporation/saml-idp.git .
+RUN git clone --single-branch -b develop/git_docker \
+  https://github.com/StudistCorporation/saml-idp.git .
 
 RUN npm install -g bower
 RUN npm install
